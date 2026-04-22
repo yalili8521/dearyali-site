@@ -6,11 +6,11 @@
 <title>Yali Li — AI Consultant & Full-Stack Builder</title>
 
 <!-- SEO -->
-<meta name="description" content="Yali Li — independent AI consultant and full-stack builder. Runs a live agent-to-agent (A2A) operation at auctura ai. Bilingual EN / 中文." />
+<meta name="description" content="Yali Li — Systems architect and independent builder specializing in Agent-to-Agent (A2A) operations. Founder of auctura ai. Bilingual EN / 中文." />
 <meta name="author" content="Yali Li" />
 <meta name="keywords" content="Yali Li, 李娅丽, AI consultant, agent-to-agent, A2A architecture, auctura ai, MCP, LangGraph, full-stack builder" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
-<meta name="theme-color" content="#eeeeec" />
+<meta name="theme-color" content="#f2f1ee" />
 <link rel="canonical" href="https://dearyali.com/" />
 
 <!-- Favicon (SVG monogram, inline to avoid extra request) -->
@@ -22,9 +22,8 @@
 <meta property="og:site_name" content="Yali Li" />
 <meta property="og:url" content="https://dearyali.com/" />
 <meta property="og:title" content="Yali Li — AI Consultant & Full-Stack Builder" />
-<meta property="og:description" content="Independent builder running a live agent-to-agent operation. Founder of auctura ai. Bilingual EN / 中文." />
+<meta property="og:description" content="Independent builder running a live agent-to-agent operation. Systems architect for autonomous workflows." />
 <meta property="og:locale" content="en_US" />
-<meta property="og:locale:alternate" content="zh_CN" />
 <meta property="profile:first_name" content="Yali" />
 <meta property="profile:last_name" content="Li" />
 
@@ -35,7 +34,6 @@
 
 <!-- Hreflang -->
 <link rel="alternate" hreflang="en" href="https://dearyali.com/" />
-<link rel="alternate" hreflang="zh" href="https://dearyali.com/?lang=zh" />
 <link rel="alternate" hreflang="x-default" href="https://dearyali.com/" />
 
 <!-- JSON-LD structured data -->
@@ -76,13 +74,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #eeeeec;
-    --bg-elevated: #e2e2df;
+    --bg: #f2f1ee; /* Warmer paper tone */
+    --bg-elevated: #e8e7e3;
     --ink: #0a0a0a;
     --ink-dim: #3a3a38;
-    --ink-faint: #8a8a86;
-    --rule: #c8c8c4;
-    --accent: #2a2a28;
+    --ink-faint: #9a9a96;
+    --rule: #d1d1cd;
+    --accent: #1a1a18;
     --accent-dim: #1a1a18;
     --serif: 'Fraunces', 'Noto Serif SC', Georgia, serif;
     --sans: 'Noto Sans SC', -apple-system, sans-serif;
@@ -96,7 +94,7 @@
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: var(--sans);
+    font-family: var(--sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-weight: 300;
     font-size: 15px;
     line-height: 1.65;
@@ -140,10 +138,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(243, 241, 236, 0.82);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--rule);
+    background: rgba(242, 241, 238, 0.75);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
     z-index: 100;
   }
 
@@ -163,12 +160,6 @@
     margin-left: 8px;
   }
 
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  }
-
   .nav-links {
     display: flex;
     gap: 28px;
@@ -186,40 +177,19 @@
 
   .nav-links a:hover { color: var(--ink); }
 
-  .lang-toggle {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    background: transparent;
-    border: 1px solid var(--rule);
-    color: var(--ink-dim);
-    padding: 6px 12px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .lang-toggle:hover {
-    border-color: var(--ink-dim);
-    color: var(--ink);
-  }
-
-  .lang-toggle .active {
-    color: var(--accent);
-  }
 
   /* ---- Layout ---- */
   main {
     max-width: 1080px;
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 40px;
   }
 
   section {
-    padding: 120px 0;
-    border-bottom: 1px solid var(--rule);
+    padding: 160px 0;
   }
 
-  section:last-child { border-bottom: none; }
+  section:not(:last-child) { border-bottom: 1px solid var(--rule); }
 
   .section-label {
     font-family: var(--mono);
@@ -358,17 +328,17 @@
   /* ---- About ---- */
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 80px;
+    grid-template-columns: 1fr 1.6fr; /* Refined asymmetry */
+    gap: 120px;
     align-items: start;
   }
 
   .about-headline {
     font-family: var(--serif);
     font-weight: 300;
-    font-size: 28px;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
+    font-size: clamp(28px, 3.5vw, 36px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     position: sticky;
     top: 120px;
   }
@@ -522,11 +492,12 @@
   .agentlab-intro .dim { color: var(--ink-dim); }
 
   .agent-diagram {
-    background: var(--bg-elevated);
+    background: #e6e5e1;
     border: 1px solid var(--rule);
-    padding: 40px 24px;
+    padding: 60px 24px;
     margin: 40px 0 16px;
     overflow-x: auto;
+    border-radius: 4px;
   }
 
   .agent-diagram svg {
@@ -698,15 +669,16 @@
   .project {
     display: grid;
     grid-template-columns: 80px 1fr auto;
-    gap: 40px;
-    padding: 40px 0;
+    gap: 60px;
+    padding: 50px 0;
     border-bottom: 1px solid var(--rule);
     align-items: start;
-    transition: padding 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .project:hover {
-    padding-left: 16px;
+    padding-left: 20px;
+    background: rgba(0,0,0,0.01);
   }
 
   .project-number {
@@ -757,6 +729,7 @@
     padding: 4px 10px;
     border: 1px solid var(--rule);
     color: var(--ink-dim);
+    border-radius: 2px;
   }
 
   .project-status {
@@ -911,9 +884,9 @@
   }
 
   .reveal {
-    opacity: 1;
-    transform: translateY(12px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal.visible {
@@ -969,31 +942,7 @@
     .contact-cta { padding: 22px 20px; font-size: 17px; }
   }
 
-  /* ---- Chinese-specific styles ---- */
-  [lang="zh"] .hero-name,
-  [lang="zh"] .hero-pitch,
-  [lang="zh"] .about-headline,
-  [lang="zh"] .services-hero,
-  [lang="zh"] .agentlab-headline,
-  [lang="zh"] .agentlab-closing,
-  [lang="zh"] .ventures-intro,
-  [lang="zh"] .project-name,
-  [lang="zh"] .contact-headline,
-  [lang="zh"] .contact-cta,
-  [lang="zh"] .service-title,
-  [lang="zh"] .cta-text {
-    font-family: 'Noto Serif SC', var(--serif);
-    letter-spacing: 0;
-  }
 
-  [lang="zh"] body,
-  [lang="zh"] .about-body p,
-  [lang="zh"] .agentlab-intro p,
-  [lang="zh"] .project-desc,
-  [lang="zh"] .agent-role,
-  [lang="zh"] .service-desc {
-    font-family: 'Noto Sans SC', var(--sans);
-  }
 </style>
 </head>
 <body>
@@ -1010,11 +959,11 @@
     </style>
     <main class="nojs">
       <h1>Yali Li <em>·</em> 李娅丽</h1>
-      <p><strong>AI Consultant &amp; Full-Stack Builder · Founder of auctura ai</strong></p>
-      <p>Independent builder working at the intersection of AI, commerce, and software. I run a multi-member Delaware LLC as a live testing ground for agent-to-agent architecture — six autonomous worker agents coordinated by an orchestrator. Whatever proves itself there becomes the basis of what I sell through auctura ai.</p>
+      <p><strong>Systems Architect &amp; Builder · Founder of auctura ai</strong></p>
+      <p>Independent builder working at the intersection of AI, commerce, and software. I operate a live laboratory for Agent-to-Agent (A2A) architecture — six autonomous agents coordinated by an orchestrator. Every architecture I design for clients is backed by systems currently running on my own books.</p>
       <h2>Ventures</h2>
-      <p><a href="https://aucturaai.com">auctura ai</a> — A2A architecture consulting for SMB.<br/>
-      Shreck Mode (MGC) — Pine Script quant strategy for Micro Gold Futures.</p>
+      <p><a href="https://aucturaai.com">auctura ai</a> — Systems Consulting &amp; A2A architecture.<br/>
+      Shreck Mode (MGC) — Quantitative strategy and risk logic.</p>
       <h2>Contact</h2>
       <p>Email: <a href="mailto:hi@aucturaai.com">hi@aucturaai.com</a><br/>
       LinkedIn: <a href="https://www.linkedin.com/in/aucturaai">linkedin.com/in/aucturaai</a></p>
