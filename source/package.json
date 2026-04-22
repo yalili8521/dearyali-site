@@ -1,0 +1,14 @@
+{
+  "name": "dearyali-com",
+  "version": "1.0.0",
+  "description": "Personal site for Yali Li — dearyali.com",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5"
+  }
+}
