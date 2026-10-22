@@ -149,6 +149,20 @@ const site = {
         stayed: 'A product can be finished enough to use in thirty minutes and still not be worth shipping until someone asks for it.',
         stack: ['React 18', 'Vite', 'PWA', 'localStorage'],
         mech: null
+      },
+      {
+        id: 'foundry',
+        when: 'Oct 2026',
+        title: 'The same habit on a platform I had never used',
+        summary: 'An agent on Microsoft Foundry with one function tool, and a ten-question evaluation graded against a pass bar written before the run.',
+        repo: 'foundry-repo-explainer',
+        href: 'https://github.com/yalili8521/foundry-repo-explainer',
+        problem: 'I had never built on Azure, and the roles I was looking at are on Azure. A weekend was the budget: one agent, one tool, one graded run, nothing that could be mistaken for a product.',
+        built: 'A prompt agent on Foundry Agent Service whose only tool fetches one of my repository READMEs from the GitHub API. The agent must call the tool before answering and must say so when the README does not cover the question. Then ten questions through the agent, sent inline to a Foundry cloud evaluation with the built-in tool-call accuracy and relevance evaluators, the same small model acting as judge. The pass bar, eight of ten on each, was in the file before the first run.',
+        broke: 'One question, and it was a real finding. The question asked which repository holds the critic rubric without naming one; the agent asked the user for the name instead of choosing, made no tool call, and scored two of five on relevance. The instructions only cover a named repository. I left the run as it was rather than tune the prompt to the test set; the fix is a second tool that lists repositories.',
+        stayed: 'Nine of ten on both evaluators. Everything in it is a habit from the earlier projects: the critic from the nightly agent, the pre-registered bar from the crypto harness. It cost a few cents.',
+        stack: ['Microsoft Foundry', 'azure-ai-projects', 'Responses API', 'GitHub API', 'cloud evaluation'],
+        mech: null
       }
     ]
   },
