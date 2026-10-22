@@ -1,6 +1,6 @@
 # dearyali-site
 
-Personal bilingual EN/中文 React site — [dearyali.com](https://dearyali.com).
+Personal site in React, English: [dearyali.com](https://dearyali.com).
 
 ## Stack
 
