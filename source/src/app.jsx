@@ -86,6 +86,27 @@ const site = {
         mech: 'inbox'
       },
       {
+        id: 'auto-trader',
+        num: '04',
+        when: 'Apr 2026 to now',
+        title: 'Auto trading systems',
+        summary: 'TradingView alerts turned into live futures orders, with a reconciler, two Windows services, and four outages that each left a test behind.',
+        repo: 'auto-trader',
+        href: 'https://github.com/yalili8521/auto-trader',
+        problem: 'A trading strategy on a chart can raise an alert at three in the morning. Nobody is awake to turn that alert into an order, and if someone is, they hesitate.',
+        built: 'A webhook service behind a Cloudflare tunnel that verifies a passphrase, tracks the position in a local ledger, sizes the order from live account equity, sends it to the broker over REST, and reconciles its own ledger against the broker every sixty seconds. It runs as two Windows services that restart on crash. Seventy-six unit tests run without a broker account.',
+        broke: 'Four times, each of them real money or nearly.',
+        stayed: 'Live on a small account since April 2026, gold micro futures first, Nasdaq micro futures now. The strategies are not published; the plumbing is.',
+        stack: ['FastAPI', 'Tradovate REST', 'NSSM services', 'Cloudflare Tunnel', 'unittest'],
+        mech: 'pipeline',
+        incidents: [
+          { when: '2026-05-19', what: 'Reconciler read a stale broker snapshot one second after an entry, decided the position was a phantom, and wiped the ledger without closing the real position. It sat unmanaged for four and a half hours.', fix: 'Drift must persist across two consecutive cycles before anything is cleared. Four-scenario regression test.' },
+          { when: '2026-05-21', what: 'The launcher was tied to my login session and died on sleep, logout and window close. Three outages in three days.', fix: 'Moved to Windows services in Session 0 with auto restart.' },
+          { when: '2026-10-12', what: 'The broker booked a loss outside my process, so my daily loss breaker never saw it.', fix: 'The breaker now reads real account equity from the broker instead of its own ledger.' },
+          { when: '2026-10-14', what: 'The machine rebooted before DNS was up, one auth call failed, and the service silently fell back to paper mode for eight hours with live trading enabled.', fix: 'Broker handle is kept and re-authenticated lazily; with live trading on and no broker attached, entries are refused and an alert goes out.' }
+        ]
+      },
+      {
         id: 'pain-finder',
         num: '02',
         when: 'Jun 2026',
@@ -114,27 +135,6 @@ const site = {
         stayed: 'Transport matters less than protocol. The reviewer being read-only is enforced by its permissions, not by trust.',
         stack: ['Python stdlib', 'SQLite', 'MCP', 'Claude + Codex'],
         mech: 'token'
-      },
-      {
-        id: 'auto-trader',
-        num: '04',
-        when: 'Apr 2026 to now',
-        title: 'Auto trading systems',
-        summary: 'TradingView alerts turned into live futures orders, with a reconciler, two Windows services, and four outages that each left a test behind.',
-        repo: 'auto-trader',
-        href: 'https://github.com/yalili8521/auto-trader',
-        problem: 'A trading strategy on a chart can raise an alert at three in the morning. Nobody is awake to turn that alert into an order, and if someone is, they hesitate.',
-        built: 'A webhook service behind a Cloudflare tunnel that verifies a passphrase, tracks the position in a local ledger, sizes the order from live account equity, sends it to the broker over REST, and reconciles its own ledger against the broker every sixty seconds. It runs as two Windows services that restart on crash. Sixty five unit tests run without a broker account.',
-        broke: 'Four times, each of them real money or nearly.',
-        stayed: 'Live on a small account since April 2026, gold micro futures first, Nasdaq micro futures now. The strategies are not published; the plumbing is.',
-        stack: ['FastAPI', 'Tradovate REST', 'NSSM services', 'Cloudflare Tunnel', 'unittest'],
-        mech: 'pipeline',
-        incidents: [
-          { when: '2026-05-19', what: 'Reconciler read a stale broker snapshot one second after an entry, decided the position was a phantom, and wiped the ledger without closing the real position. It sat unmanaged for four and a half hours.', fix: 'Drift must persist across two consecutive cycles before anything is cleared. Four-scenario regression test.' },
-          { when: '2026-05-21', what: 'The launcher was tied to my login session and died on sleep, logout and window close. Three outages in three days.', fix: 'Moved to Windows services in Session 0 with auto restart.' },
-          { when: '2026-10-12', what: 'The broker booked a loss outside my process, so my daily loss breaker never saw it.', fix: 'The breaker now reads real account equity from the broker instead of its own ledger.' },
-          { when: '2026-10-14', what: 'The machine rebooted before DNS was up, one auth call failed, and the service silently fell back to paper mode for eight hours with live trading enabled.', fix: 'Broker handle is kept and re-authenticated lazily; with live trading on and no broker attached, entries are refused and an alert goes out.' }
-        ]
       },
       {
         id: 'meibook',
