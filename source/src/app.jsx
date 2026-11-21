@@ -14,7 +14,7 @@ const site = {
   hero: {
     name: 'Yali Li',
     role: 'Engineer, production AI systems',
-    location: 'Issaquah, Washington',
+    location: 'Seattle area, Washington',
     intro: 'I build systems that have to keep running after I close the laptop, a live futures execution service, a bus that lets two different models work one task, a nightly research agent that gets graded by a critic, and a booking tool for one-person studios. Before that, five years as a structural engineer.',
     links: [
       { label: 'Email', href: 'mailto:yalili8521@gmail.com' },
@@ -170,7 +170,7 @@ const site = {
     title: 'Work history',
     intro: 'A path through structural engineering, a store, and production AI.',
     rows: [
-      { dates: '2025 to now', title: 'Builder and learner', org: 'Issaquah, Washington', line: 'The projects on this site, built and operated on my own account, my own store, or my own deadline.' },
+      { dates: '2025 to now', title: 'Builder and learner', org: 'Seattle area, Washington', line: 'The projects on this site, built and operated on my own account, my own store, or my own deadline.' },
       { dates: 'Aug 2025 to Nov 2025', title: 'Full-stack engineering bootcamp', org: 'Student', line: 'JavaScript, Node and React, full time. Projects: Funzmart, a toy store, and Salinaka, an eyewear store, both in React; a vacation-planning page in plain JavaScript; and a dashboard with an Express and MongoDB backend (auth, e-commerce, CRM and analytics routes) and a Vite frontend.', links: [{ label: 'funzmart demo', href: 'https://yalili8521.github.io/funzmart/' }, { label: 'funzmart code', href: 'https://github.com/yalili8521/funzmart' }, { label: 'salinaka demo', href: 'https://yalili8521.github.io/salinaka/' }, { label: 'salinaka code', href: 'https://github.com/yalili8521/salinaka' }, { label: 'vacation page demo', href: 'https://jsproject-yl.vercel.app' }, { label: 'JsProject_YL', href: 'https://github.com/yalili8521/JsProject_YL' }, { label: 'dashboard demo', href: 'https://node-js-yl-a76s.vercel.app' }, { label: 'NodeJS-YL', href: 'https://github.com/yalili8521/NodeJS-YL' }] },
       { dates: 'Jan 2025 to 2026', title: 'Business owner, Amazon store', org: 'TY Little Store, Amazon brand Heraphus', line: 'One product line from sourcing to roughly fifty to sixty thousand dollars in cumulative sales in 2025.' },
       { dates: 'Apr 2024 to Apr 2025', title: 'Structural Engineer', org: 'KPFF Consulting Engineers, Special Projects Group, Seattle', line: 'Marine structures for several ports: bulkheads, pile caps, precast and cast-in-place elements, coordinated with utility, geotechnical and mechanical teams. Built a nonlinear spring modeling tool wired into SAP2000 through Excel VBA. Led the seismic analysis of timber docks for the Ballard Pier study. Shop drawing review and construction support for Port of Seattle Terminal 91.' },
@@ -201,7 +201,7 @@ const site = {
     methods: [
       { label: 'Email', value: 'yalili8521@gmail.com', href: 'mailto:yalili8521@gmail.com' },
       { label: 'GitHub', value: 'github.com/yalili8521', href: 'https://github.com/yalili8521' },
-      { label: 'Location', value: 'Issaquah, Washington' }
+      { label: 'Location', value: 'Seattle area, Washington' }
     ],
     footer: '© 2026 Yali Li'
   }
